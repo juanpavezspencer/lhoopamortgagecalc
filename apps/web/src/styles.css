@@ -1,0 +1,312 @@
+/*
+ * Mobile-first. Tokens live on .lmc (not :root) so they work inside the widget's shadow root.
+ * No bank or BP Tapera branding.
+ */
+.lmc {
+  --bg: #f7f7f4;
+  --surface: #ffffff;
+  --text: #1c1f1d;
+  --muted: #5d6460;
+  --border: #dcdfd9;
+  --accent: #0f6b4f;
+  --accent-text: #ffffff;
+  --green-bg: #e3f3ea;
+  --green: #1d6b3f;
+  --amber-bg: #fdf0d5;
+  --amber: #8a5a00;
+  --red-bg: #fbe3e0;
+  --red: #a3261b;
+  --radius: 12px;
+
+  box-sizing: border-box;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 16px;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--text);
+  background: var(--bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  .lmc {
+    --bg: #141716;
+    --surface: #1d2120;
+    --text: #e8ebe9;
+    --muted: #a3aaa6;
+    --border: #343a37;
+    --accent: #3fb68b;
+    --accent-text: #0c1411;
+    --green-bg: #173326;
+    --green: #7fd9a8;
+    --amber-bg: #3a2d10;
+    --amber: #f2c46b;
+    --red-bg: #3d1915;
+    --red: #f4978c;
+  }
+}
+
+body:has(> #root > .lmc) {
+  margin: 0;
+  background: var(--bg, #f7f7f4);
+}
+
+.lmc *,
+.lmc *::before,
+.lmc *::after {
+  box-sizing: inherit;
+}
+
+.lmc h1,
+.lmc h2,
+.lmc h3 {
+  margin: 0;
+  line-height: 1.2;
+}
+.lmc h1 { font-size: 1.5rem; }
+.lmc h2 { font-size: 1.2rem; }
+.lmc h3 { font-size: 1rem; margin-top: 4px; }
+.lmc p { margin: 4px 0; }
+
+.lmc .top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.lmc .muted { color: var(--muted); }
+.lmc .small { font-size: 0.85rem; }
+
+.lmc .card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-top: 16px;
+}
+
+/* Form */
+.lmc .field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0 0 16px;
+  padding: 0;
+  border: 0;
+}
+.lmc .field label,
+.lmc .field legend {
+  font-weight: 600;
+  padding: 0;
+  margin-bottom: 6px;
+}
+.lmc select,
+.lmc .number-input {
+  width: 100%;
+  min-height: 48px;
+  font: inherit;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.lmc select { padding: 0 12px; }
+.lmc .number-input {
+  display: flex;
+  align-items: center;
+}
+.lmc .number-input:focus-within,
+.lmc select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+.lmc .number-input .prefix {
+  padding-left: 12px;
+  color: var(--muted);
+}
+.lmc .number-input input {
+  flex: 1;
+  min-width: 0;
+  height: 46px;
+  padding: 0 12px 0 8px;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  outline: none;
+}
+.lmc .hint { color: var(--muted); }
+.lmc .error { color: var(--red); }
+.lmc .field--error .number-input,
+.lmc .field--error select { border-color: var(--red); }
+
+.lmc .segmented {
+  display: flex;
+  gap: 8px;
+}
+.lmc .segmented label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin: 0;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.lmc .segmented label.selected {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-text);
+}
+.lmc .segmented input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.lmc .segmented label:has(input:focus-visible) {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.lmc .link-button {
+  padding: 8px 0;
+  font: inherit;
+  color: var(--accent);
+  background: none;
+  border: 0;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.lmc .advanced {
+  margin-top: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+/* Results */
+.lmc .results {
+  display: grid;
+  gap: 0;
+}
+.lmc .scheme header { margin-bottom: 12px; }
+.lmc .headline .label { color: var(--muted); }
+.lmc .headline .big {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.lmc .payment {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 8px;
+  margin: 12px 0 4px;
+}
+.lmc .payment strong { font-size: 1.25rem; }
+
+.lmc .badge {
+  display: inline-block;
+  padding: 2px 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 999px;
+}
+.lmc .badge--green { background: var(--green-bg); color: var(--green); }
+.lmc .badge--amber { background: var(--amber-bg); color: var(--amber); }
+.lmc .badge--red { background: var(--red-bg); color: var(--red); }
+.lmc .badge--neutral { background: var(--border); color: var(--text); }
+
+.lmc .reasons { padding-left: 20px; margin: 8px 0 0; }
+.lmc .notice {
+  padding: 8px 12px;
+  background: var(--amber-bg);
+  color: var(--amber);
+  border-radius: 8px;
+}
+
+.lmc .target,
+.lmc .promo,
+.lmc .terms,
+.lmc .upfront {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+.lmc summary {
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 32px;
+}
+
+.lmc dl {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px 12px;
+  margin: 8px 0;
+}
+.lmc dl > div { display: contents; }
+.lmc dt { color: var(--muted); }
+.lmc dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; }
+.lmc .unknown dd { color: var(--muted); font-style: italic; }
+.lmc .total dt,
+.lmc .total dd {
+  padding-top: 6px;
+  border-top: 1px solid var(--border);
+  color: var(--text);
+  font-weight: 700;
+}
+.lmc .saving { font-weight: 600; }
+
+.lmc table {
+  width: 100%;
+  margin-top: 8px;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+.lmc th,
+.lmc td {
+  padding: 6px 4px;
+  text-align: right;
+  border-bottom: 1px solid var(--border);
+}
+.lmc th[scope='row'] { text-align: left; font-weight: 500; }
+.lmc thead th { font-size: 0.85rem; color: var(--muted); font-weight: 500; }
+.lmc tr.current { font-weight: 700; }
+
+.lmc .warnings {
+  margin: 16px 0 0;
+  padding-left: 20px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.lmc .cta {
+  display: block;
+  margin-top: 16px;
+  padding: 14px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  color: var(--accent-text);
+  background: var(--accent);
+  border-radius: var(--radius);
+}
+.lmc .disclaimer {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+@media (min-width: 900px) {
+  .lmc:not(.lmc--embedded) { max-width: 960px; }
+  .lmc:not(.lmc--embedded) .results {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+}

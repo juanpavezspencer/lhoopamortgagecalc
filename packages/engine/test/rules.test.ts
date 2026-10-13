@@ -133,3 +133,12 @@ describe('input validation', () => {
     expect(run({ applicantAge: 35 })).toEqual(run({ applicantAge: 35 }));
   });
 });
+
+describe('upfront basis', () => {
+  it('costs are computed on the displayed safe max price, so the breakdown is consistent', () => {
+    const q = run({}).commercial.quote!;
+    const dp = q.upfrontCash.items.find((i) => i.code === 'DOWN_PAYMENT')!.amount;
+    expect(q.upfrontCash.basisPrice).toBe(q.safeMaxPrice);
+    expect(dp).toBe(q.safeMaxPrice * q.downPaymentPct);
+  });
+});

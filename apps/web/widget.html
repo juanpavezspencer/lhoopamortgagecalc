@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Widget demo</title>
+    <style>
+      body { font-family: Georgia, serif; max-width: 720px; margin: 0 auto; padding: 16px; background: #f4f1ea; color: #222; }
+    </style>
+  </head>
+  <body>
+    <!-- Simulated Lhoopa listing page. Host styles must not leak into the widget (shadow DOM). -->
+    <h1>Rumah 2 kamar, Kabupaten Tangerang</h1>
+    <p>Rp350.000.000</p>
+    <div data-lhoopa-calculator data-regency="3603" data-target-price="350000000" data-lang="id"></div>
+    <script type="module" src="/src/widget.tsx"></script>
+  </body>
+</html>

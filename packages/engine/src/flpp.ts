@@ -53,8 +53,9 @@ export function computeFlpp(ctx: SchemeContext, cfg: EngineConfig): SchemeResult
   const payment = loan / af;
   const bindingConstraint = capacityPrice > priceCap ? 'PRICE_CAP' : term.limitedByAge ? 'AGE' : 'INCOME';
 
-  // Upfront cash on the target price if given (and financeable by FLPP), else the max price.
-  const basisPrice = input.targetPrice !== undefined && input.targetPrice <= priceCap ? input.targetPrice : maxPrice;
+  // Costs are for a concrete home: the target if FLPP can finance it, else one priced at the displayed safe max price.
+  const basisPrice =
+    input.targetPrice !== undefined && input.targetPrice <= priceCap ? input.targetPrice : roundPriceDown(maxPrice);
   const raw: RawUpfrontItem[] = [
     { code: 'DOWN_PAYMENT', amount: basisPrice * dpPct, known: true },
     notaryItem(basisPrice, cfg.upfront, warnings),

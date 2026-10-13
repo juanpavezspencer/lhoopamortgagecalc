@@ -3,11 +3,14 @@
   "private": true,
   "type": "module",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "apps/*"
   ],
   "scripts": {
     "test": "npm run test --workspaces --if-present",
-    "typecheck": "npm run typecheck --workspaces --if-present"
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "dev": "npm run dev -w @lhoopa/web",
+    "build": "npm run build -w @lhoopa/web"
   },
   "engines": {
     "node": ">=20"

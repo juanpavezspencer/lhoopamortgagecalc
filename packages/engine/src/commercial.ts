@@ -97,7 +97,8 @@ export function computeCommercial(ctx: SchemeContext, cfg: EngineConfig): Scheme
   const fixed = selectFixedPeriod(ctx, cfg, warnings);
   const bm = fixed ? bankMethod(ctx, cfg, fixed, capacity, months, dpPct) : null;
 
-  const basisPrice = input.targetPrice ?? maxPrice;
+  // Costs are for a concrete home: the target, or one priced at the displayed safe max price.
+  const basisPrice = input.targetPrice ?? roundPriceDown(maxPrice);
   const basisLoan = basisPrice * (1 - dpPct);
   const raw: RawUpfrontItem[] = [
     { code: 'DOWN_PAYMENT', amount: basisPrice * dpPct, known: true },

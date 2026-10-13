@@ -35,8 +35,10 @@ Source spec: "Lhoopa Indonesia Mortgage Calculator — Business Specification" (
 
 ```bash
 npm install          # install all workspaces
+npm run dev          # web app on http://localhost:5173 (widget demo: /widget.html)
 npm test             # run the engine tests, including the acceptance tests
 npm run typecheck    # tsc --noEmit across workspaces
+npm run build        # web app → apps/web/dist, widget → apps/web/dist/widget/lhoopa-calculator.js
 ```
 
 ### Layout
@@ -45,7 +47,11 @@ npm run typecheck    # tsc --noEmit across workspaces
 - `packages/engine/src/node/load.ts`: file loader for Node (`@lhoopa/engine/node`), kept out of the pure entry.
 - `data/params/params.json`: parameter records. Bank keys are namespaced `bank.<bankId>.*` (e.g. `bank.bca.floatingRate` for the spec's `bca.floatingRate`), and promo packages are `bank.<bankId>.package.<id>`. `value: null` marks an open question; the engine returns a warning code rather than guessing.
 - `data/zones/regency-zones.csv`: **partial seed**; must be completed from the BPS master list.
-- `apps/web`: not created yet (framework undecided).
+- `apps/web`: Vite + React, mobile-first. The engine runs client-side on bundled data (`@data` alias → `data/`); no backend.
+  - `src/i18n/`: `id.ts` (default) and `en.ts`; `en` is typed against `id`, so a missing key fails the typecheck. All user-facing strings go here.
+  - `src/form.ts`: form state → engine input. `src/components/Results.tsx`: result cards (headline = safe figure; promo figure in a collapsed, labelled panel).
+  - `src/widget.tsx`: embeddable build. Mounts on `[data-lhoopa-calculator]` (attributes `data-regency`, `data-target-price`, `data-lang`, `data-advisor-url`) inside a shadow root; also `window.LhoopaCalculator.mount(el, opts)`.
+  - The app, not the engine, reads the clock: `asOfDate` is today in Asia/Jakarta.
 
 ---
 
