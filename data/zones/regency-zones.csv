@@ -1,0 +1,29 @@
+bps_code,name,province,income_zone,price_zone
+3101,Kabupaten Kepulauan Seribu,DKI Jakarta,4,D
+3171,Kota Jakarta Selatan,DKI Jakarta,4,D
+3172,Kota Jakarta Timur,DKI Jakarta,4,D
+3173,Kota Jakarta Pusat,DKI Jakarta,4,D
+3174,Kota Jakarta Barat,DKI Jakarta,4,D
+3175,Kota Jakarta Utara,DKI Jakarta,4,D
+3201,Kabupaten Bogor,Jawa Barat,4,D
+3271,Kota Bogor,Jawa Barat,4,D
+3276,Kota Depok,Jawa Barat,4,D
+3216,Kabupaten Bekasi,Jawa Barat,4,D
+3275,Kota Bekasi,Jawa Barat,4,D
+3603,Kabupaten Tangerang,Banten,4,D
+3671,Kota Tangerang,Banten,4,D
+3674,Kota Tangerang Selatan,Banten,4,D
+3273,Kota Bandung,Jawa Barat,1,A
+3374,Kota Semarang,Jawa Tengah,1,A
+3578,Kota Surabaya,Jawa Timur,1,A
+1271,Kota Medan,Sumatera Utara,1,A
+5171,Kota Denpasar,Bali,2,D
+5271,Kota Mataram,Nusa Tenggara Barat,1,D
+5371,Kota Kupang,Nusa Tenggara Timur,1,D
+2171,Kota Batam,Kepulauan Riau,2,B
+1971,Kota Pangkal Pinang,Kepulauan Bangka Belitung,2,B
+7371,Kota Makassar,Sulawesi Selatan,2,B
+6471,Kota Balikpapan,Kalimantan Timur,2,C
+8171,Kota Ambon,Maluku,2,D
+8271,Kota Ternate,Maluku Utara,2,D
+9471,Kota Jayapura,Papua,3,E

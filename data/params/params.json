@@ -1,0 +1,403 @@
+{
+  "version": "2026-10-13.1",
+  "description": "Initial parameter set imported from business spec v0.1",
+  "records": [
+    {
+      "key": "flpp.rate.landed",
+      "value": 0.05,
+      "source": "https://ekonomi.bisnis.com/read/20260625/47/1983246/resmi-tenor-kpr-rumah-subsidi-rusun-diperpanjang-sampai-40-tahun",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date."
+    },
+    {
+      "key": "flpp.rate.apartment",
+      "value": 0.06,
+      "source": "https://ekonomi.bisnis.com/read/20260625/47/1983246/resmi-tenor-kpr-rumah-subsidi-rusun-diperpanjang-sampai-40-tahun",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date. Not used in v1 (rusun is v2)."
+    },
+    {
+      "key": "flpp.term.maxYears",
+      "value": 40,
+      "source": "https://ekonomi.bisnis.com/read/20260625/47/1983246/resmi-tenor-kpr-rumah-subsidi-rusun-diperpanjang-sampai-40-tahun",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date."
+    },
+    {
+      "key": "flpp.term.defaultYears",
+      "value": 20,
+      "source": "Lhoopa policy (spec v0.1)",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date."
+    },
+    {
+      "key": "flpp.term.comparisonYears",
+      "value": [
+        20,
+        30,
+        40
+      ],
+      "source": "Lhoopa Indonesia Mortgage Calculator — Business Specification v0.1 (13 Oct 2026)",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date."
+    },
+    {
+      "key": "flpp.dp.minPct",
+      "value": 0.01,
+      "source": "https://blog.itera.ac.id/?p=5865",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date."
+    },
+    {
+      "key": "flpp.dp.defaultPct",
+      "value": 0.01,
+      "source": "Lhoopa policy (spec v0.1)",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date."
+    },
+    {
+      "key": "flpp.sbum.amount",
+      "value": null,
+      "source": "OPEN QUESTION (spec v0.1) — no value yet",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date. SBUM amount and eligibility for 2026 unknown; engine deducts nothing and warns."
+    },
+    {
+      "key": "flpp.dsr",
+      "value": 0.3,
+      "source": "Lhoopa policy (spec v0.1)",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date. To validate with banks (30/35/40%)."
+    },
+    {
+      "key": "flpp.maxPayoffAge",
+      "value": null,
+      "source": "OPEN QUESTION (spec v0.1) — no value yet",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date. Which ages the 40-year term is live for is unknown; no age cap applied."
+    },
+    {
+      "key": "flpp.eligibility.minAgeUnlessMarried",
+      "value": 21,
+      "source": "OPEN QUESTION (spec v0.1) — no value yet",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date. FLPP minimum age is an open question; set to null to disable the AGE check."
+    },
+    {
+      "key": "flpp.bphtbExempt",
+      "value": null,
+      "source": "OPEN QUESTION (spec v0.1) — no value yet",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date. MBR BPHTB exemption per regency unknown; engine applies BPHTB (conservative) and warns."
+    },
+    {
+      "key": "flpp.incomeCaps",
+      "value": {
+        "1": {
+          "single": 8500000,
+          "married": 10000000
+        },
+        "2": {
+          "single": 9000000,
+          "married": 11000000
+        },
+        "3": {
+          "single": 10500000,
+          "married": 12000000
+        },
+        "4": {
+          "single": 12000000,
+          "married": 14000000
+        }
+      },
+      "source": "https://www.cnbcindonesia.com/news/20250424183353-4-628546/catat-batas-maksimal-gaji-mbr-beli-rumah-subsidi-rp-14-juta",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date. Permen PKP 5/2025."
+    },
+    {
+      "key": "flpp.priceCaps.landed",
+      "value": {
+        "A": 166000000,
+        "B": 173000000,
+        "C": 182000000,
+        "D": 185000000,
+        "E": 240000000
+      },
+      "source": "https://www.investortrust.id/business/110359/apersi-usul-harga-rumah-subsidi-naik-15-ini-alasannya",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date. Kepmen PUPR 689/KPTS/M/2023, unchanged in 2026."
+    },
+    {
+      "key": "commercial.referenceBankId",
+      "value": "bca",
+      "source": "Lhoopa Indonesia Mortgage Calculator — Business Specification v0.1 (13 Oct 2026)",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date."
+    },
+    {
+      "key": "commercial.term.comparisonYears",
+      "value": [
+        15,
+        20,
+        25
+      ],
+      "source": "Lhoopa Indonesia Mortgage Calculator — Business Specification v0.1 (13 Oct 2026)",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date."
+    },
+    {
+      "key": "commercial.riskFlag",
+      "value": {
+        "greenMax": 0.3,
+        "amberMax": 0.4
+      },
+      "source": "Lhoopa Indonesia Mortgage Calculator — Business Specification v0.1 (13 Oct 2026)",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date."
+    },
+    {
+      "key": "commercial.paymentShockBadgeAbove",
+      "value": 1.3,
+      "source": "Lhoopa Indonesia Mortgage Calculator — Business Specification v0.1 (13 Oct 2026)",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date."
+    },
+    {
+      "key": "bank.bca.term.maxYears",
+      "value": 25,
+      "source": "https://finansial.bisnis.com/read/20260918/55/2005179/ini-4-langkah-mengatur-pembiayaan-kpr-rumah-pertama",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date."
+    },
+    {
+      "key": "bank.bca.maxPayoffAge",
+      "value": 65,
+      "source": "https://www.cermati.com/kredit-pemilikan-rumah/kpr-bca-fix-rate",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date."
+    },
+    {
+      "key": "bank.bca.floatingRate",
+      "value": 0.11,
+      "source": "https://keuangan.kontan.co.id/news/likuiditas-bank-ketat-begini-bunga-floating-kpr",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date."
+    },
+    {
+      "key": "bank.bca.sbdk",
+      "value": 0.0914,
+      "source": "https://keuangan.kontan.co.id/news/likuiditas-bank-ketat-begini-bunga-floating-kpr",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date. July 2026 SBDK, informational only."
+    },
+    {
+      "key": "bank.bca.dp.defaultPct",
+      "value": 0.1,
+      "source": "https://www.industry.co.id/read/152959/perbandingan-kpr-bri-vs-mandiri-vs-bca-vs-btn-2026-mana-cicilan-paling-ringan",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date."
+    },
+    {
+      "key": "bank.bca.dp.minPct",
+      "value": 0.1,
+      "source": "https://www.industry.co.id/read/152959/perbandingan-kpr-bri-vs-mandiri-vs-bca-vs-btn-2026-mana-cicilan-paling-ringan",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date."
+    },
+    {
+      "key": "bank.bca.dsr.default",
+      "value": 0.3,
+      "source": "https://www.industry.co.id/read/152959/perbandingan-kpr-bri-vs-mandiri-vs-bca-vs-btn-2026-mana-cicilan-paling-ringan",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date. Not published by BCA; industry rule of thumb."
+    },
+    {
+      "key": "bank.bca.dsr.max",
+      "value": 0.4,
+      "source": "https://www.industry.co.id/read/152959/perbandingan-kpr-bri-vs-mandiri-vs-bca-vs-btn-2026-mana-cicilan-paling-ringan",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date. Not published by BCA; industry rule of thumb."
+    },
+    {
+      "key": "bank.bca.provisionPct",
+      "value": 0.01,
+      "source": "https://keuangan.kontan.co.id/news/bca-tawarkan-bunga-kpr-mulai-123-ini-tips-agar-cicilan-tetap-aman",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date."
+    },
+    {
+      "key": "bank.bca.provisionPromoPct",
+      "value": 0.0081,
+      "source": "https://keuangan.kontan.co.id/news/bca-tawarkan-bunga-kpr-mulai-123-ini-tips-agar-cicilan-tetap-aman",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date."
+    },
+    {
+      "key": "bank.bca.appraisalInsurance",
+      "value": null,
+      "source": "OPEN QUESTION (spec v0.1) — no value yet",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date. Fixed appraisal + insurance amount TBD."
+    },
+    {
+      "key": "bank.bca.defaultPackageId",
+      "value": "bca-expo-5y",
+      "source": "Lhoopa policy (spec v0.1)",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date."
+    },
+    {
+      "key": "bank.bca.package.bca-expo-1y",
+      "value": {
+        "fixedRate": 0.0123,
+        "fixedMonths": 12
+      },
+      "source": "https://keuangan.kontan.co.id/news/bca-tawarkan-bunga-kpr-mulai-123-ini-tips-agar-cicilan-tetap-aman",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": "2026-10-31",
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date. New homes from partner developers; reverts to bank.bca.floatingRate after the fixed period."
+    },
+    {
+      "key": "bank.bca.package.bca-expo-2y",
+      "value": {
+        "fixedRate": 0.0235,
+        "fixedMonths": 24
+      },
+      "source": "https://keuangan.kontan.co.id/news/bca-tawarkan-bunga-kpr-mulai-123-ini-tips-agar-cicilan-tetap-aman",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": "2026-10-31",
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date. New homes from partner developers; reverts to bank.bca.floatingRate after the fixed period."
+    },
+    {
+      "key": "bank.bca.package.bca-expo-3y",
+      "value": {
+        "fixedRate": 0.0275,
+        "fixedMonths": 36
+      },
+      "source": "https://keuangan.kontan.co.id/news/bca-tawarkan-bunga-kpr-mulai-123-ini-tips-agar-cicilan-tetap-aman",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": "2026-10-31",
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date. New homes from partner developers; reverts to bank.bca.floatingRate after the fixed period."
+    },
+    {
+      "key": "bank.bca.package.bca-expo-5y",
+      "value": {
+        "fixedRate": 0.0381,
+        "fixedMonths": 60
+      },
+      "source": "https://keuangan.kontan.co.id/news/bca-tawarkan-bunga-kpr-mulai-123-ini-tips-agar-cicilan-tetap-aman",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": "2026-10-31",
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date. New homes from partner developers; reverts to bank.bca.floatingRate after the fixed period."
+    },
+    {
+      "key": "bi.ltv.maxLtv",
+      "value": 1,
+      "source": "https://keuangan.kontan.co.id/news/kebijakan-dp-rumah-0-diperpanjang-hingga-2026-apakah-dongkrak-kredit-properti",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": "2026-12-31",
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date. BI: banks with NPL < 5% may lend up to 100% (0% DP). Lowers the minimum DP only; default DP stays per bank."
+    },
+    {
+      "key": "upfront.notaryPct",
+      "value": null,
+      "source": "OPEN QUESTION (spec v0.1) — no value yet",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date. Notary/deed/mortgage registration % of price TBD."
+    },
+    {
+      "key": "upfront.bphtb.rate",
+      "value": 0.05,
+      "source": "Lhoopa Indonesia Mortgage Calculator — Business Specification v0.1 (13 Oct 2026)",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date."
+    },
+    {
+      "key": "upfront.bphtb.npoptkp",
+      "value": {},
+      "source": "OPEN QUESTION (spec v0.1) — no value yet",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date. NPOPTKP per BPS code TBD; missing regencies assume 0 (conservative) and warn."
+    },
+    {
+      "key": "upfront.monthlySavingDefaultPct",
+      "value": 0.1,
+      "source": "Lhoopa Indonesia Mortgage Calculator — Business Specification v0.1 (13 Oct 2026)",
+      "effectiveFrom": "2026-10-01",
+      "effectiveTo": null,
+      "editor": "claude (initial import from spec v0.1)",
+      "changeNote": "Initial import from business spec v0.1. effectiveFrom is the import baseline (\"as of October 2026\"), not the legal effective date."
+    }
+  ]
+}
