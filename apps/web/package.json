@@ -1,5 +1,5 @@
 {
-  "name": "@lhoopa/web",
+  "name": "@seiya/web",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -10,7 +10,7 @@
     "typecheck": "tsc -p tsconfig.json"
   },
   "dependencies": {
-    "@lhoopa/engine": "*",
+    "@seiya/engine": "*",
     "react": "^19.3.0",
     "react-dom": "^19.3.0"
   },

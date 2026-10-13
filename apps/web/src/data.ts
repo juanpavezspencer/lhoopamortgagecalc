@@ -1,4 +1,4 @@
-import { parseParamSet, parseZoneCsv, type RegencyZone } from '@lhoopa/engine';
+import { parseParamSet, parseZoneCsv, type RegencyZone } from '@seiya/engine';
 import rawParams from '@data/params/params.json';
 import rawZones from '@data/zones/regency-zones.csv?raw';
 

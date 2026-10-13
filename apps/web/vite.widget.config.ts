@@ -12,8 +12,8 @@ export default defineConfig({
     lib: {
       entry: 'src/widget.tsx',
       formats: ['iife'],
-      name: 'LhoopaCalculator',
-      fileName: () => 'lhoopa-calculator.js',
+      name: 'SeiyaCalculator',
+      fileName: () => 'seiya-calculator.js',
     },
   },
 });

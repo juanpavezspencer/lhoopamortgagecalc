@@ -1,21 +1,92 @@
 /*
- * Mobile-first. Tokens live on .lmc (not :root) so they work inside the widget's shadow root.
- * No bank or BP Tapera branding.
+ * Mobile-first, Seiya Capital brand (navy, sky, red dot). The brand red is kept for the logo:
+ * red in the UI means risk. Tokens are set on both :root and .lmc so they also work inside the
+ * widget's shadow root. No bank or BP Tapera branding.
  */
+/*
+ * Theme: light tokens first; dark via the OS setting unless the host page forces light
+ * (data-theme="light" on <html>), and forced dark via data-theme="dark".
+ * `:host .lmc` covers the widget, whose shadow root cannot see the host's <html>.
+ */
+:root,
 .lmc {
-  --bg: #f7f7f4;
+  /* Seiya Capital brand */
+  --brand-navy: #112543;
+  --brand-red: #ec3f30;
+  --brand-sky: #cadcfc;
+  --brand-grey: #595959;
+
+  --bg: #f4f7fc;
   --surface: #ffffff;
-  --text: #1c1f1d;
-  --muted: #5d6460;
-  --border: #dcdfd9;
-  --accent: #0f6b4f;
+  --tint: #eaf1fe;
+  --text: #112543;
+  --muted: #595959;
+  --border: #d6e0f0;
+  --accent: #112543;
   --accent-text: #ffffff;
+  --focus: #3a6fd8;
   --green-bg: #e3f3ea;
   --green: #1d6b3f;
   --amber-bg: #fdf0d5;
   --amber: #8a5a00;
-  --red-bg: #fbe3e0;
-  --red: #a3261b;
+  --red-bg: #fde4e1;
+  --red: #b3261a;
+  --logo-on-light: inline-block;
+  --logo-on-dark: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']),
+  :root:not([data-theme='light']) .lmc,
+  :host .lmc {
+  --bg: #0b1628;
+  --surface: #112543;
+  --tint: #18325a;
+  --text: #eef3fc;
+  --muted: #a9b8d0;
+  --border: #233c63;
+  --accent: #cadcfc;
+  --accent-text: #112543;
+  --focus: #8fb2f5;
+  --green-bg: #163526;
+  --green: #84dcaa;
+  --amber-bg: #3a2d10;
+  --amber: #f2c46b;
+  --red-bg: #43191a;
+  --red: #ff9a8f;
+  --logo-on-light: none;
+  --logo-on-dark: inline-block;
+  color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'],
+:root[data-theme='dark'] .lmc {
+  --bg: #0b1628;
+  --surface: #112543;
+  --tint: #18325a;
+  --text: #eef3fc;
+  --muted: #a9b8d0;
+  --border: #233c63;
+  --accent: #cadcfc;
+  --accent-text: #112543;
+  --focus: #8fb2f5;
+  --green-bg: #163526;
+  --green: #84dcaa;
+  --amber-bg: #3a2d10;
+  --amber: #f2c46b;
+  --red-bg: #43191a;
+  --red: #ff9a8f;
+  --logo-on-light: none;
+  --logo-on-dark: inline-block;
+  color-scheme: dark;
+}
+
+body:has(.lmc) {
+  background: var(--bg);
+}
+
+.lmc {
   --radius: 12px;
 
   box-sizing: border-box;
@@ -27,29 +98,6 @@
   line-height: 1.45;
   color: var(--text);
   background: var(--bg);
-}
-
-@media (prefers-color-scheme: dark) {
-  .lmc {
-    --bg: #141716;
-    --surface: #1d2120;
-    --text: #e8ebe9;
-    --muted: #a3aaa6;
-    --border: #343a37;
-    --accent: #3fb68b;
-    --accent-text: #0c1411;
-    --green-bg: #173326;
-    --green: #7fd9a8;
-    --amber-bg: #3a2d10;
-    --amber: #f2c46b;
-    --red-bg: #3d1915;
-    --red: #f4978c;
-  }
-}
-
-body:has(> #root > .lmc) {
-  margin: 0;
-  background: var(--bg, #f7f7f4);
 }
 
 .lmc *,
@@ -71,10 +119,15 @@ body:has(> #root > .lmc) {
 
 .lmc .top {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 12px;
+  margin-bottom: 12px;
 }
+.lmc .logo img { height: 40px; width: auto; }
+.lmc .logo .logo__on-light { display: var(--logo-on-light); }
+.lmc .logo .logo__on-dark { display: var(--logo-on-dark); }
+.lmc .logo-icon { width: 32px; height: 32px; border-radius: 7px; }
 
 .lmc .muted { color: var(--muted); }
 .lmc .small { font-size: 0.85rem; }
@@ -119,7 +172,7 @@ body:has(> #root > .lmc) {
 }
 .lmc .number-input:focus-within,
 .lmc select:focus {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--focus);
   outline-offset: 1px;
 }
 .lmc .number-input .prefix {
@@ -169,7 +222,7 @@ body:has(> #root > .lmc) {
   pointer-events: none;
 }
 .lmc .segmented label:has(input:focus-visible) {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--focus);
   outline-offset: 2px;
 }
 
@@ -194,6 +247,12 @@ body:has(> #root > .lmc) {
   gap: 0;
 }
 .lmc .scheme header { margin-bottom: 12px; }
+.lmc .headline {
+  padding: 14px 16px;
+  margin: 0 -4px;
+  background: var(--tint);
+  border-radius: 10px;
+}
 .lmc .headline .label { color: var(--muted); }
 .lmc .headline .big {
   font-size: 2rem;

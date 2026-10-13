@@ -1,4 +1,4 @@
-import type { InputIssue } from '@lhoopa/engine';
+import type { InputIssue } from '@seiya/engine';
 import { useState } from 'react';
 import { regencies } from '../data';
 import { issueField, type FormState } from '../form';

@@ -1,6 +1,7 @@
 /** Bahasa Indonesia (default). `en.ts` must define exactly the same keys (enforced by its type). */
 export const id = {
-  'app.title': 'Kalkulator KPR Lhoopa',
+  'app.title': 'Kalkulator KPR Seiya Capital',
+  'app.heading': 'Kalkulator KPR',
   'app.subtitle': 'Cari tahu harga rumah yang aman untuk anggaran Anda.',
   'lang.switch': 'English',
 
@@ -58,7 +59,7 @@ export const id = {
   'reason.AGE': 'Belum memenuhi syarat usia FLPP',
   'reason.DEBT_TOO_HIGH': 'Cicilan utang lain sudah menghabiskan batas kemampuan bayar',
 
-  'flag.NO_FLPP_LISTING_NEARBY': 'Belum ada rumah FLPP Lhoopa di wilayah ini',
+  'flag.NO_FLPP_LISTING_NEARBY': 'Belum ada rumah FLPP Seiya Capital di wilayah ini',
 
   'terms.title': 'Bandingkan tenor',
   'terms.years': '{years} tahun',

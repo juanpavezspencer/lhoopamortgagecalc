@@ -1,11 +1,11 @@
-# Lhoopa Mortgage Calculator
+# Seiya Capital Mortgage Calculator
 
-Indicative home-affordability calculator for Lhoopa Indonesia. Given a household's income and situation, it tells them the highest house price they can finance and the monthly payment they will actually face, under two schemes:
+Indicative home-affordability calculator for Seiya Capital. Given a household's income and situation, it tells them the highest house price they can finance and the monthly payment they will actually face, under two schemes:
 
 - **FLPP**: government-subsidized KPR (KPR Sejahtera), distributed by banks via BP Tapera.
 - **Commercial KPR**: standard conventional bank mortgage, with **BCA as the reference bank** in v1.
 
-Users: home buyers (self-serve, mobile web) and Lhoopa sales agents (advanced mode). It is **not** a credit decision tool: no SLIK/BI Checking, no bank submission.
+Users: home buyers (self-serve, mobile web) and Seiya Capital sales agents (advanced mode). It is **not** a credit decision tool: no SLIK/BI Checking, no bank submission.
 
 Source spec: "Lhoopa Indonesia Mortgage Calculator — Business Specification" (Claude Doc, draft v0.1, 13 Oct 2026). If this file and the spec disagree, ask before changing behaviour.
 
@@ -38,20 +38,21 @@ npm install          # install all workspaces
 npm run dev          # web app on http://localhost:5173 (widget demo: /widget.html)
 npm test             # run the engine tests, including the acceptance tests
 npm run typecheck    # tsc --noEmit across workspaces
-npm run build        # web app → apps/web/dist, widget → apps/web/dist/widget/lhoopa-calculator.js
+npm run build        # web app → apps/web/dist, widget → apps/web/dist/widget/seiya-calculator.js
 ```
 
 ### Layout
 
 - `packages/engine/src/`: `calculate.ts` (entry), `flpp.ts`, `commercial.ts`, `upfront.ts`, `finance.ts` (annuity maths), `rounding.ts` (output boundary only), `params.ts` (versioned records, resolved by `asOfDate`), `config.ts` (typed views over params), `zones.ts`, `validate.ts`.
-- `packages/engine/src/node/load.ts`: file loader for Node (`@lhoopa/engine/node`), kept out of the pure entry.
+- `packages/engine/src/node/load.ts`: file loader for Node (`@seiya/engine/node`), kept out of the pure entry.
 - `data/params/params.json`: parameter records. Bank keys are namespaced `bank.<bankId>.*` (e.g. `bank.bca.floatingRate` for the spec's `bca.floatingRate`), and promo packages are `bank.<bankId>.package.<id>`. `value: null` marks an open question; the engine returns a warning code rather than guessing.
 - `data/zones/regency-zones.csv`: **partial seed**; must be completed from the BPS master list.
 - `apps/web`: Vite + React, mobile-first. The engine runs client-side on bundled data (`@data` alias → `data/`); no backend.
   - `src/i18n/`: `id.ts` (default) and `en.ts`; `en` is typed against `id`, so a missing key fails the typecheck. All user-facing strings go here.
   - `src/form.ts`: form state → engine input. `src/components/Results.tsx`: result cards (headline = safe figure; promo figure in a collapsed, labelled panel).
-  - `src/widget.tsx`: embeddable build. Mounts on `[data-lhoopa-calculator]` (attributes `data-regency`, `data-target-price`, `data-lang`, `data-advisor-url`) inside a shadow root; also `window.LhoopaCalculator.mount(el, opts)`.
+  - `src/widget.tsx`: embeddable build. Mounts on `[data-seiya-calculator]` (attributes `data-regency`, `data-target-price`, `data-lang`, `data-advisor-url`) inside a shadow root; also `window.SeiyaCalculator.mount(el, opts)`.
   - The app, not the engine, reads the clock: `asOfDate` is today in Asia/Jakarta.
+  - Brand: Seiya Capital. Logos in `src/brand/` (inlined as data URIs so the widget needs no asset hosting), favicon and touch icon in `public/`. Colours: navy `#112543`, sky `#CADCFC`, red `#EC3F30`, grey `#595959`, as tokens at the top of `src/styles.css`. Brand red stays in the logo only, because red in the UI means risk. Fonts are system fonts until official typefaces are supplied.
 
 ---
 
@@ -82,7 +83,7 @@ npm run build        # web app → apps/web/dist, widget → apps/web/dist/widge
 - FLPP eligibility check
 - Max loan, max price, monthly payment, payment after promo
 - Upfront cash and months to save it
-- Matching results to Lhoopa listings
+- Matching results to Seiya Capital listings
 
 **Out of scope for v1**
 - FLPP apartments (rusun), planned for v2
@@ -126,10 +127,10 @@ Load these into `data/params/` as the first parameter version. Keep the `source`
 | `flpp.rate.landed` | 0.05, fixed for the whole term | Bisnis, 25 Jun 2026 — https://ekonomi.bisnis.com/read/20260625/47/1983246/resmi-tenor-kpr-rumah-subsidi-rusun-diperpanjang-sampai-40-tahun |
 | `flpp.rate.apartment` | 0.06 (v2) | same |
 | `flpp.term.maxYears` | 40 | same |
-| `flpp.term.defaultYears` | 20, plus a 40-year comparison | Lhoopa choice |
+| `flpp.term.defaultYears` | 20, plus a 40-year comparison | Seiya Capital choice |
 | `flpp.dp.minPct` | 0.01 | BP Tapera via https://blog.itera.ac.id/?p=5865 |
 | `flpp.sbum.amount` | TBD, open question | — |
-| `flpp.dsr` | 0.30 | Lhoopa policy, to validate with banks |
+| `flpp.dsr` | 0.30 | Seiya Capital policy, to validate with banks |
 
 ### FLPP income caps (gross monthly IDR, Permen PKP 5/2025)
 
@@ -209,7 +210,7 @@ If FLPP fails, return the reason code:
 - `PRIOR_SUBSIDY`
 - `AGE`
 
-If FLPP passes but no FLPP-eligible Lhoopa listing exists in the area, return both results with the flag `NO_FLPP_LISTING_NEARBY`.
+If FLPP passes but no FLPP-eligible Seiya Capital listing exists in the area, return both results with the flag `NO_FLPP_LISTING_NEARBY`.
 
 ---
 
@@ -377,9 +378,9 @@ Any change to the parameters or the engine must re-run these tests.
 | Area | Requirement |
 | --- | --- |
 | Performance | Under 1 s per calculation; usable on 3G |
-| Interface | Mobile-first; embeddable widget for Lhoopa listing pages |
+| Interface | Mobile-first; embeddable widget for Seiya Capital listing pages |
 | Language | Bahasa Indonesia (default) and English. All user-facing strings go through i18n |
-| Privacy | Income and marital data are personal data under UU PDP 27/2022. Store nothing without consent; anonymous use must work. Leads go to the Lhoopa CRM only. Never log raw income values |
+| Privacy | Income and marital data are personal data under UU PDP 27/2022. Store nothing without consent; anonymous use must work. Leads go to the Seiya Capital CRM only. Never log raw income values |
 | Branding | BCA is named as a reference only; no bank or BP Tapera logos |
 
 ---
@@ -391,7 +392,7 @@ Any change to the parameters or the engine must re-run these tests.
 - Does BCA size loans on the promo rate or on a stressed rate?
 - Is the 40-year FLPP term live at all 43 distributing banks, and for which ages?
 - FLPP minimum age, and the spouse-income rule for single Tapera participants.
-- BPHTB and other fee exemptions for MBR buyers in each Lhoopa regency.
+- BPHTB and other fee exemptions for MBR buyers in each Seiya Capital regency.
 - Will BI extend the 100% LTV rule beyond 2026-12-31?
 - Will FLPP price caps rise in 2027?
 - How is income defined for informal workers?

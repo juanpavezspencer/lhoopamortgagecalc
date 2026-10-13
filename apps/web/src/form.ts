@@ -5,7 +5,7 @@ import {
   type CalculationResult,
   type InputIssue,
   type MaritalStatus,
-} from '@lhoopa/engine';
+} from '@seiya/engine';
 import { params, zones } from './data';
 
 /** Raw form state. `null` = left empty. Percentages are whole numbers (10 = 10%). */

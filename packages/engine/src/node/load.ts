@@ -1,6 +1,6 @@
 /**
  * Node-only file loader. Kept out of the main entry so the engine itself stays free of I/O (rule 5).
- * Import from `@lhoopa/engine/node`.
+ * Import from `@seiya/engine/node`.
  */
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';

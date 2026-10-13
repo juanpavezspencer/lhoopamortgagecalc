@@ -1,5 +1,5 @@
 {
-  "name": "lhoopa-mortgage-calculator",
+  "name": "seiya-mortgage-calculator",
   "private": true,
   "type": "module",
   "workspaces": [
@@ -9,8 +9,8 @@
   "scripts": {
     "test": "npm run test --workspaces --if-present",
     "typecheck": "npm run typecheck --workspaces --if-present",
-    "dev": "npm run dev -w @lhoopa/web",
-    "build": "npm run build -w @lhoopa/web"
+    "dev": "npm run dev -w @seiya/web",
+    "build": "npm run build -w @seiya/web"
   },
   "engines": {
     "node": ">=20"

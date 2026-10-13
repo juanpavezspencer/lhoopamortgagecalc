@@ -6,7 +6,7 @@ import type {
   SchemeResult,
   TargetEvaluation,
   UpfrontCash,
-} from '@lhoopa/engine';
+} from '@seiya/engine';
 import { useI18n } from '../i18n';
 import type { MessageKey } from '../i18n/id';
 

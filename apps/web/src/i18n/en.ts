@@ -1,7 +1,8 @@
 import type { MessageKey } from './id';
 
 export const en: Record<MessageKey, string> = {
-  'app.title': 'Lhoopa Mortgage Calculator',
+  'app.title': 'Seiya Capital Mortgage Calculator',
+  'app.heading': 'Mortgage Calculator',
   'app.subtitle': 'Find the home price that is safe for your budget.',
   'lang.switch': 'Bahasa Indonesia',
 
@@ -59,7 +60,7 @@ export const en: Record<MessageKey, string> = {
   'reason.AGE': 'Does not meet the FLPP age requirement',
   'reason.DEBT_TOO_HIGH': 'Other debt payments already use up the repayment limit',
 
-  'flag.NO_FLPP_LISTING_NEARBY': 'No Lhoopa FLPP homes in this area yet',
+  'flag.NO_FLPP_LISTING_NEARBY': 'No Seiya Capital FLPP homes in this area yet',
 
   'terms.title': 'Compare terms',
   'terms.years': '{years} years',

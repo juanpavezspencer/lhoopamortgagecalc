@@ -1,12 +1,12 @@
 /**
- * Embeddable widget for Lhoopa listing pages.
+ * Embeddable widget for Seiya Capital listing pages.
  *
- *   <div data-lhoopa-calculator data-regency="3603" data-target-price="350000000" data-lang="id"
+ *   <div data-seiya-calculator data-regency="3603" data-target-price="350000000" data-lang="id"
  *        data-advisor-url="https://..."></div>
- *   <script src="lhoopa-calculator.js"></script>
+ *   <script src="seiya-calculator.js"></script>
  *
  * Renders into a shadow root so host-page CSS and the widget's CSS cannot affect each other.
- * Also exposes `window.LhoopaCalculator.mount(element, options)`.
+ * Also exposes `window.SeiyaCalculator.mount(element, options)`.
  */
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
@@ -50,7 +50,7 @@ function optionsFrom(el: HTMLElement): WidgetOptions {
 }
 
 function mountAll() {
-  document.querySelectorAll<HTMLElement>('[data-lhoopa-calculator]').forEach((el) => mount(el, optionsFrom(el)));
+  document.querySelectorAll<HTMLElement>('[data-seiya-calculator]').forEach((el) => mount(el, optionsFrom(el)));
 }
 
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mountAll);
